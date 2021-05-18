@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  mp4info:
+    build: .
+    volumes:
+      - "./:/build"
