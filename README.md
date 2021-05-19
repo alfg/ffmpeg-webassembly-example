@@ -1,7 +1,7 @@
 # FFmpeg WebAssembly Example
 A minimal example of building FFmpeg's `libav` to WebAssembly via [Emscripten](https://emscripten.org/) using Docker.
 
-https://dev.to/alfg/ffmpeg-in-the-browser-with-web-assembly-1e7l
+https://dev.to/alfg/ffmpeg-webassembly-2cbl
 
 ## Usage 
 Build the WebAssembly files using Docker and copy the output to `www/`:
