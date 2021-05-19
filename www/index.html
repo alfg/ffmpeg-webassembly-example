@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>FFmpeg WebAssembly Tutorial</title>
+    <title>FFmpeg WebAssembly Example</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
@@ -13,11 +13,13 @@
     <div id="results"></div>
 </body>
 <script>
+    // Create a worker for running Wasm code without blocking main thread.
     const worker = new Worker('worker.js');
 
     const input = document.querySelector('input');
     input.addEventListener('change', onFileChange);
 
+    // Listen for messages back from worker and render to DOM.
     worker.onmessage = (e) => {
         const data = e.data;
         const results = document.getElementById('results');
@@ -34,7 +36,7 @@
         results.appendChild(ul);
     }
 
-
+    // Send file to worker.
     function onFileChange(event) {
         const file = input.files[0];
         worker.postMessage([ file ]);
